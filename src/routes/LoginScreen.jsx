@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { getAuth, signInWithEmailAndPassword } from 'firebase/auth'; // Importa las funciones necesarias
+import { getAuth, signInWithEmailAndPassword } from 'firebase/auth';
 import { auth } from '../config/firebaseConfig';
 
 const LoginScreen = () => {
@@ -13,9 +13,9 @@ const LoginScreen = () => {
     e.preventDefault();
 
     try {
-      const userCredential = await signInWithEmailAndPassword(auth, email, password); // Utiliza signInWithEmailAndPassword
+      const userCredential = await signInWithEmailAndPassword(auth, email, password);
       const user = userCredential.user;
-      navigate('/home'); // Cambia '/home' por la ruta que deseas después del inicio de sesión exitoso
+      navigate('/home');
     } catch (error) {
       console.error('Error al iniciar sesión:', error);
       setLoginError('Credenciales incorrectas. Por favor, intenta nuevamente.');
@@ -26,8 +26,10 @@ const LoginScreen = () => {
     <div className="login-container">
       <div className="login-form">
         <img className="logo-login" src="../src/assets/tecsup.png" alt="TECSUP" />
-        <p className="title">Sistema de administración para la reserva de computadoras del lab 1502</p>
-        <form onSubmit={handleLogin}>
+        
+        <form onSubmit={handleLogin} className="login-inputs">
+        <p className="title-login">Sistema de administración para la reserva de computadoras</p>
+
           <div className="mb-3">
             <label htmlFor="correo" className="form-label">Correo electrónico</label>
             <input
