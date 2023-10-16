@@ -3,9 +3,7 @@ import { ButtonProfile } from "./ButtonProfile"
 import { useState, useRef, useEffect } from "react"
 import { ProfileModal } from "../components/ProfileModal"
 
-
-export const NavBar = () => {
-
+const NavBar = () => {
     const [isModalOpen, setIsModalOpen] = useState(false)
 
     const openModal = () => {
@@ -80,3 +78,5 @@ export const NavBar = () => {
         </>
     )
 }
+
+export default NavBar;

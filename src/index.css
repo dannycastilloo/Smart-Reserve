@@ -130,7 +130,6 @@
     margin: 40px 0;
     color: #4F4E4E;
     font-size: 20px;
-    font-weight: bold;
 }
 
 /* Profile */
@@ -213,42 +212,56 @@
 
 /* Login */
 .login-container {
-    background-image: url('../src/assets/background-tecsup.png');
-    background-repeat: no-repeat;
+    background: url('../src/assets/background-tecsup.jpg') no-repeat center fixed;
     background-size: cover;
-    padding: 6%;
+    position: relative;
+    width: 100%;
+    height: 100vh;
 }
 
 .logo-login {
-    width: 230px;
-    height: 62px;
+    width: 250px;
     display: block;
-    margin: 20px auto;
+    margin: 1vh auto 3vh auto;
+}
+
+.title-login {
+    text-align: center;
+    color: #363c43;
+    font-size: 16px;
+    margin: 2vh auto;
 }
 
 .login-form {
-    width: 468px;
-    height: 600px;
-    position: relative;
-    left: 70%;
-    padding: 2.5%;
-    background-color: #E8E8E8;
-    border-radius: 30px;
+    position: absolute;
+    left: 73%;
+    top: 25%;
+    background-color: #e8e8e8ef;
+    border-radius: 10px;
+    padding: 4vh;
+}
+
+.login-inputs {
+    width: 33vh;
+    display: block;
+    margin: 2vh auto;
+}
+
+.login-form label, .login-inputs input {
+    color: #363c43;
+    font-size: 14px;
 }
 
 .login-form button {
     display: block;
     margin: 0 auto;
-    width: 80%;
+    width: 100%;
     padding: 10px;
 }
 
-.form-label {
-    color: #4F4E4E;
-    font-size: 20px;
-}
-
-.iniciar {
-    width: 340px;
-    height: 56px;
+.error-message {
+    text-align: center;
+    margin-top: 2vh;
+    color: #363c43;
+    font-size: 14px;
 }
