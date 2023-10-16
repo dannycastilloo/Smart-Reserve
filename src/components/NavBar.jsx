@@ -1,6 +1,37 @@
 import { NavLink } from "react-router-dom"
+import { ButtonProfile } from "./ButtonProfile"
+import { useState, useRef, useEffect } from "react"
+import { ProfileModal } from "../components/ProfileModal"
+
 
 export const NavBar = () => {
+
+    const [isModalOpen, setIsModalOpen] = useState(false)
+
+    const openModal = () => {
+        setIsModalOpen(true)
+    }
+
+    const closeModal = () => {
+        setIsModalOpen(false)
+    }
+
+    const modalRef = useRef(null);
+
+    useEffect(() => {
+        const handleClickOutside = (event) => {
+            if (modalRef.current && !modalRef.current.contains(event.target) && isModalOpen) {
+                closeModal();
+            }
+        };
+
+        window.addEventListener('mousedown', handleClickOutside);
+
+        return () => {
+            window.removeEventListener('mousedown', handleClickOutside);
+        };
+    }, [isModalOpen]);
+
     return (
         <>
             <header className="header">
@@ -15,14 +46,8 @@ export const NavBar = () => {
                                         </label>
                                     </div>
                                 </li>
-                                <button className="no-style-button">
-                                    <li className="nav-item">
-                                        <img className="user-icon" src="../src/assets/user.png" alt="User" />
-                                    </li>
-                                    <li className="nav-item">
-                                        <span className="admin">Admin</span>
-                                    </li>
-                                </button>
+
+                                <ButtonProfile onClick={openModal} />
                             </ul>
                         </div>
                     </div>
@@ -41,6 +66,17 @@ export const NavBar = () => {
                     <label htmlFor="btn-menu">✖️</label>
                 </div>
             </div>
+
+            {isModalOpen && (
+                <>
+                    <div className="modal-background"></div>
+                    <div className="modal-overlay">
+                        <div className="modal-container" ref={modalRef}>
+                            <ProfileModal closeModal={closeModal} />
+                        </div>
+                    </div>
+                </>
+            )}
         </>
     )
 }

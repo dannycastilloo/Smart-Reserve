@@ -1,9 +1,7 @@
-import React from 'react'
-
 export const Table = () => {
     return (
         <>
-            <table class="table">
+            <table className="table">
                 <thead>
                     <tr>
                         <th scope="col">Computadora</th>
