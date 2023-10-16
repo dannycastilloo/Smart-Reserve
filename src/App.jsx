@@ -25,23 +25,21 @@ export const App = () => {
       <Routes>
         <Route path="/" element={<Navigate to="/login" />} />
         <Route path="/login" element={<LoginScreen />} />
-        {user && (
-          <Route
-            path="/app"
-            element={
-              <>
-                <NavBar />
-                <Routes>
-                  <Route path="/" element={<Navigate to="/home" />} />
-                  <Route path="/reserve" element={<ReserveScreen />} />
-                  <Route path="/stats" element={<StatsScreen />} />
-                  <Route path="/profile" element={<ProfileScreen />} />
-                  <Route path="/home" element={<HomeScreen />} />
-                </Routes>
-              </>
-            }
-          />
-        )}
+        <Route path="/home/*" element={user ? <ProtectedRoutes /> : <Navigate to="/login" />} />
+      </Routes>
+    </>
+  );
+};
+
+const ProtectedRoutes = () => {
+  return (
+    <>
+      <NavBar />
+      <Routes>
+        <Route path="/" element={<HomeScreen />} />
+        <Route path="/reserve" element={<ReserveScreen />} />
+        <Route path="/stats" element={<StatsScreen />} />
+        <Route path="/profile" element={<ProfileScreen />} />
       </Routes>
     </>
   );
