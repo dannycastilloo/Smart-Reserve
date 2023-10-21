@@ -5,6 +5,8 @@ Esta aplicación está dirigida a un administrador de TECSUP. Este supervisa las
 
 ## Prototipo
 
+![Captura de pantalla 2023-10-21 144651](https://github.com/dannycastilloo/Smart-Reserve/assets/76531494/0fedc12d-e0da-4e3d-ac55-1bd8228221e3)
+
 <p> <a href="[https://www.figma.com/file/o6Cccoq6zlNVERT8Cr5ESl/Prototipo-tesis?type=design&node-id=0%3A1&mode=design&t=wn4RK75JOQ6VHzLg-1](https://www.figma.com/file/o6Cccoq6zlNVERT8Cr5ESl/Prototipo-tesis?type=design&node-id=68-3&mode=design&t=kOFhHUOeuloKdTtw-0)">Ver prototipo</a> </p>
 
 ## Modelo de proceso
