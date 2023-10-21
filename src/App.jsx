@@ -7,6 +7,7 @@ import LoginScreen from './routes/LoginScreen';
 import { MayShowNavBar } from './components/MayShowNavBar';
 import NavBar from './components/NavBar';
 import { getAuth, onAuthStateChanged } from 'firebase/auth';
+import { StoreScreen } from './routes/StoreScreen';
 
 export const App = () => {
   const [user, setUser] = useState(null);
@@ -32,6 +33,7 @@ export const App = () => {
         <Route path="/login" element={<LoginScreen />} />
         <Route path="/reserve" element={<ReserveScreen />} />
         <Route path="/stats" element={<StatsScreen />} />
+        <Route path="/store" element={<StoreScreen />} />
       </Routes>
     </>
   );

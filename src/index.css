@@ -1,10 +1,109 @@
-/* Nav Bar */
+/* Fonts */
+@font-face {
+    font-family: Nunito-Regular;
+    src: url(../src/assets/fonts/Nunito/Nunito-Regular.ttf);
+}
+
+@font-face {
+    font-family: Nunito-Medium;
+    src: url(../src/assets/fonts/Nunito/Nunito-Medium.ttf);
+}
+
+@font-face {
+    font-family: Nunito-ExtraLightItalic;
+    src: url(../src/assets/fonts/Nunito/Nunito-ExtraLightItalic.ttf);
+}
+
+@font-face {
+    font-family: Inter-Regular;
+    src: url(../src/assets/fonts/Inter/Inter-Regular.ttf);
+}
+
+@font-face {
+    font-family: Inter-Medium;
+    src: url(../src/assets/fonts/Inter/Inter-Medium.ttf);
+}
+
+/* Text styles */
+
+.title {
+    text-align: center;
+    margin-top: 45px;
+    color: #4F5B67;
+    font-size: 24px;
+    font-family: "Inter-Medium";
+}
+
+.table-head {
+    font-family: 'Nunito-Regular';
+    color: #718096;
+    text-align: center;
+}
+
+.table-content {
+    font-family: 'Nunito-ExtraLightItalic';
+    color: #111827;
+    text-align: center;
+}
+
+/* Buttons */
+.filtros {
+    border: none;
+    border-radius: 10px;
+    padding: 0.5rem 1rem;
+    color: #718096;
+    font-family: 'Nunito-Medium';
+}
+
+.filtros img {
+    width: 22px;
+}
+
+.actions-container {
+    display: flex;
+    margin: 0 auto;
+}
+
+.agregar {
+    color: #0CAF60;
+    background-color: #EDF6ED;
+    border: none;
+    border-radius: 10px;
+    padding: 0 0.8rem;
+    font-family: 'Nunito-Medium';
+    width: 80px;
+    height: 32px;
+    font-size: 14px;
+    margin: 0 auto;
+}
+
+.cancelar {
+    color: #FD6A6A;
+    background-color: #FFECEC;
+    border: none;
+    border-radius: 10px;
+    padding: 0 0.8rem;
+    font-family: 'Nunito-Medium';
+    width: 80px;
+    height: 32px;
+    font-size: 14px;
+    margin: 0 auto;
+}
+
+/* General styles */
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-family: 'Nunito-Regular';
 }
+
+h1 {
+    font-family: 'Inter-Regular';
+}
+
+/* Navbar */
 
 .header {
     background-color: #448AFF;
@@ -84,6 +183,7 @@
 .cont-menu nav a:hover {
     border-left: 5px solid #C7DCFF;
     background: #C7DCFF;
+    transition: ease-in 0.3s;
 }
 
 .cont-menu label {
@@ -104,7 +204,11 @@
 
 .nav-icon {
     padding-right: 12px;
-    width: 36px;
+    width: 40px;
+}
+
+.nav-icon:hover {
+    fill: #C7DCFF;
 }
 
 .admin {
@@ -123,13 +227,6 @@
 
 .user-icon {
     width: 35px;
-}
-
-.title {
-    text-align: center;
-    margin: 40px 0;
-    color: #4F4E4E;
-    font-size: 20px;
 }
 
 /* Profile */

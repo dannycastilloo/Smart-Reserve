@@ -22,11 +22,12 @@ export const Filter = () => {
             <div className="filter-table">
                 <form className="d-flex filter-pc" role="search">
                     <input className="form-control me-2" type="search" placeholder="Buscar por computadora, alumno u otros" aria-label="Search" />
-                    <button className="btn btn-outline-success" type="submit">Search</button>
                 </form>
-                <button className="btn btn-outline-success">Filtros</button>
-                <button className="btn btn-outline-dark">Abril 01 - Abril 16</button>
-                <button className="btn btn-primary">Descargar</button>
+                <button className="filtros"> <img src="../src/assets/Filter.svg" alt="Filtros" /> Filtros</button>
+                
+                <button className="filtros"> <img src="../src/assets/calendar.svg" alt="Calendar" /> Abril 01 - Abril 16</button>
+
+                <button className="filtros"> <img src="../src/assets/download.svg" alt="Download" /> Descargar</button>
             </div>
         </>
     )

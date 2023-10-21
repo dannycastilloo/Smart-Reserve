@@ -55,10 +55,11 @@ const NavBar = () => {
             <div className="container-menu">
                 <div className="cont-menu">
                     <nav>
-                        <NavLink to="/"><img className="nav-icon" src="../src/assets/pc.png" alt="Inicio" />Inicio</NavLink>
-                        <NavLink to="/reserve"><img className="nav-icon" src="../src/assets/clock.png" alt="Reservas" />Reservas</NavLink>
-                        <NavLink to="/stats"><img className="nav-icon" src="../src/assets/check-list.png" alt="Estadísticas" />Estadísticas</NavLink>
-                        <NavLink to="/login"><img className="nav-icon" src="../src/assets/salida.png" alt="Salir" /> Cerrar Sesión</NavLink>
+                        <NavLink to="/"><img className="nav-icon" src="../src/assets/inicio.svg" alt="Inicio" />Inicio</NavLink>
+                        <NavLink to="/reserve"><img className="nav-icon" src="../src/assets/pc.svg" alt="Reservas" />Reservas</NavLink>
+                        <NavLink to="/stats"><img className="nav-icon" src="../src/assets/stats.svg" alt="Estadísticas" />Estadísticas</NavLink>
+                        <NavLink to="/store"><img className="nav-icon" src="../src/assets/store.svg" alt="Almacén" />Almacén</NavLink>
+                        <NavLink to="/login"><img className="nav-icon" src="../src/assets/logout.svg" alt="Salir" /> Cerrar Sesión</NavLink>
                     </nav>
                     <label htmlFor="btn-menu">✖️</label>
                 </div>
