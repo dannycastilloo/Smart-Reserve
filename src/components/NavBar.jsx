@@ -40,7 +40,7 @@ const NavBar = () => {
                                 <li className="nav-item">
                                     <div className="btn-menu">
                                         <label htmlFor="btn-menu">
-                                            <img className="tecsup" src="../src/assets/tecsup.png" />
+                                            <img className="tecsup" src="../src/assets/tecsup.png" alt="logo tecsup"/>
                                         </label>
                                     </div>
                                 </li>
@@ -58,7 +58,6 @@ const NavBar = () => {
                         <NavLink to="/"><img className="nav-icon" src="../src/assets/pc.png" alt="Inicio" />Inicio</NavLink>
                         <NavLink to="/reserve"><img className="nav-icon" src="../src/assets/clock.png" alt="Reservas" />Reservas</NavLink>
                         <NavLink to="/stats"><img className="nav-icon" src="../src/assets/check-list.png" alt="Estadísticas" />Estadísticas</NavLink>
-                        <NavLink to="/profile"><img className="nav-icon" src="../src/assets/profile.png" alt="Perfil" />Perfil</NavLink>
                         <NavLink to="/login"><img className="nav-icon" src="../src/assets/salida.png" alt="Salir" /> Cerrar Sesión</NavLink>
                     </nav>
                     <label htmlFor="btn-menu">✖️</label>
