@@ -57,13 +57,13 @@ export const Table = () => {
             <table className="table">
                 <thead>
                     <tr>
-                        <th scope="col"> <p className="table-head">Computadora</p> </th>
-                        <th scope="col"><p className="table-head">Reserva</p></th>
-                        <th scope="col"><p className="table-head">Usuario</p></th>
-                        <th scope="col"><p className="table-head">Estado</p></th>
-                        <th scope="col"><p className="table-head">Hora Inicio</p></th>
-                        <th scope="col"><p className="table-head">Hora Final</p></th>
-                        <th scope="col"><p className="table-head">Acciones</p></th>
+                        <th scope="col"> <span className="table-head">Computadora</span> </th>
+                        <th scope="col"><span className="table-head">Reserva</span></th>
+                        <th scope="col"><span className="table-head">Usuario</span></th>
+                        <th scope="col"><span className="table-head">Estado</span></th>
+                        <th scope="col"><span className="table-head">Hora Inicio</span></th>
+                        <th scope="col"><span className="table-head">Hora Final</span></th>
+                        <th scope="col"><span className="table-head">Acciones</span></th>
                     </tr>
                 </thead>
                 <tbody>
