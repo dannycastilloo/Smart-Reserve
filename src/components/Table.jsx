@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { db } from '../config/firebaseConfig';
-import { ref, onValue } from 'firebase/database';
+import { ref, onValue, update, push, remove } from 'firebase/database';
 
 export const Table = () => {
     const [reservations, setReservations] = useState([]);
@@ -29,12 +29,31 @@ export const Table = () => {
         onValue(reservationsRef, (snapshot) => {
             const reservationsData = snapshot.val();
             if (reservationsData) {
-                const reservationsArray = Object.values(reservationsData);
+                const reservationsArray = Object.entries(reservationsData).map(([key, value]) => ({...value, key}));
                 setReservations(reservationsArray);
             }
         });
 
     }, []);
+
+    // Manejo de reservas
+    const confirmReservation = (reservation) => {
+        const reservationRef = ref(db, `Reserves/${reservation.key}`);
+        update(reservationRef, { State: 'Aceptada' });
+    };    
+
+    const rejectReservation = (reservation) => {
+        // Actualizar el estado y active en la base de datos
+        const reservationRef = ref(db, `Reserves/${reservation.key}`);
+        update(reservationRef, { State: 'Rechazada', Active: 0 });
+    
+        // Mover la reserva a PastReserves
+        const pastReservesRef = ref(db, 'PastReserves');
+        push(pastReservesRef, reservation);
+    
+        // Eliminar la reserva de Reserves
+        remove(reservationRef);
+    };
 
     return (
         <>
@@ -51,7 +70,7 @@ export const Table = () => {
                     </tr>
                 </thead>
                 <tbody>
-                    {reservations.map((reservation) => (
+                    {Object.values(reservations).map((reservation) => (
                         <tr key={reservation.ReserveId}>
                             <td className="table-content">{computers[reservation.ComputerId]?.Codigo || 'N/A'}</td>
                             <td className="table-content">{reservation.ReserveId}</td>
@@ -60,8 +79,8 @@ export const Table = () => {
                             <td className="table-content">{reservation.DatetimeStart}</td>
                             <td className="table-content">{reservation.DatetimeEnd}</td>
                             <td className="actions-container">
-                                <button className="agregar">Confirmar</button>
-                                <button className="cancelar">Rechazar</button>
+                                <button className="agregar" onClick={() => confirmReservation(reservation)}>Confirmar</button>
+                                <button className="cancelar" onClick={() => rejectReservation(reservation)}>Rechazar</button>
                             </td>
                         </tr>
                     ))}
