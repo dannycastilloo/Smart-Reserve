@@ -43,15 +43,12 @@ export const Table = () => {
     };    
 
     const rejectReservation = (reservation) => {
-        // Actualizar el estado y active en la base de datos
         const reservationRef = ref(db, `Reserves/${reservation.key}`);
         update(reservationRef, { State: 'Rechazada', Active: 0 });
     
-        // Mover la reserva a PastReserves
         const pastReservesRef = ref(db, 'PastReserves');
         push(pastReservesRef, reservation);
     
-        // Eliminar la reserva de Reserves
         remove(reservationRef);
     };
 

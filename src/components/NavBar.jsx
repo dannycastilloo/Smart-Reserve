@@ -55,7 +55,7 @@ const NavBar = () => {
             <div className="container-menu">
                 <div className="cont-menu">
                     <nav>
-                        <NavLink to="/"><img className="nav-icon" src="../src/assets/inicio.svg" alt="Inicio" />Inicio</NavLink>
+                        <NavLink to="/home"><img className="nav-icon" src="../src/assets/inicio.svg" alt="Inicio" />Inicio</NavLink>
                         <NavLink to="/reserve"><img className="nav-icon" src="../src/assets/pc.svg" alt="Reservas" />Reservas</NavLink>
                         <NavLink to="/stats"><img className="nav-icon" src="../src/assets/stats.svg" alt="Estadísticas" />Estadísticas</NavLink>
                         <NavLink to="/store"><img className="nav-icon" src="../src/assets/store.svg" alt="Almacén" />Almacén</NavLink>

@@ -2,7 +2,7 @@ export const ProfileModal = ({ closeModal }) => {
     return (
         <>
             <div className="project-modal">
-                <h1>Editar perfil</h1>
+                <h1 className="title">Editar perfil</h1>
 
                 <label>Nombres</label>
                 <input className="project-name" type="text" id="nombre" name="nombre" placeholder="John" />
@@ -16,7 +16,10 @@ export const ProfileModal = ({ closeModal }) => {
                 <label>Celular</label>
                 <input className="project-name" type="phone" id="celular" name="celular" placeholder="946583472" />
 
-                <button className="button-project" onClick={closeModal}>Guardar</button>
+                <div>
+                    <button className="button-filled" onClick={closeModal}>Guardar</button>
+                    <button className="button-outline" onClick={closeModal}>Cancelar</button>
+                </div>
             </div>
         </>
     )
