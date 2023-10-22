@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { db } from '../config/firebaseConfig';
-import { ref, onValue } from 'firebase/database';
+import { remove, ref, onValue } from 'firebase/database';
 
 export const TablePC = () => {
     const [computers, setComputers] = useState({});
@@ -15,6 +15,19 @@ export const TablePC = () => {
             }
         });
     }, []);
+
+    const deleteComputer = (computerId) => {
+        const computersRef = ref(db, `Computers/${computerId}`);
+
+        remove(computersRef)
+            .then(() => {
+                console.log('Computadora eliminada correctamente.');
+            })
+            .catch((error) => {
+                console.error('Error al eliminar la computadora:', error);
+            });
+    };
+
 
     return (
         <>
@@ -36,7 +49,7 @@ export const TablePC = () => {
                             <td className="table-content">{computer.Brand}</td>
                             <td className="table-content">{computer.Model}</td>
                             <td className="actions-container">
-                                <button className="cancelar" onClick={() => rejectReservation(reservation)}>Eliminar</button>
+                                <button className="cancelar" onClick={() => deleteComputer(computer.Id)}>Eliminar</button>
                             </td>
                         </tr>
                     ))}

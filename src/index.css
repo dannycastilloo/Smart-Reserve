@@ -37,13 +37,11 @@
 .table-head {
     font-family: 'Nunito-Regular';
     color: #718096;
-    text-align: center;
 }
 
 .table-content {
     font-family: 'Nunito-ExtraLightItalic';
     color: #111827;
-    text-align: center;
 }
 
 /* Buttons */
@@ -70,7 +68,7 @@
     border: none;
     border-radius: 10px;
     font-family: 'Nunito-Medium';
-    margin: 0 auto;
+    margin: 0;
     padding: 0.5rem 1rem;
 }
 
@@ -83,7 +81,6 @@
     width: 80px;
     height: 32px;
     font-size: 14px;
-    margin: 0 auto;
 }
 
 .cancelar {
@@ -95,7 +92,6 @@
     width: 80px;
     height: 32px;
     font-size: 14px;
-    margin: 0 auto;
 }
 
 /* General styles */
