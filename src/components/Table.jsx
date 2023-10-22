@@ -59,9 +59,9 @@ export const Table = () => {
                             <td className="table-content">{reservation.State}</td>
                             <td className="table-content">{reservation.DatetimeStart}</td>
                             <td className="table-content">{reservation.DatetimeEnd}</td>
-                            <td>
+                            <td className="actions-container">
                                 <button className="agregar">Confirmar</button>
-                                <button className="cancelar">Cancelar</button>
+                                <button className="cancelar">Rechazar</button>
                             </td>
                         </tr>
                     ))}
