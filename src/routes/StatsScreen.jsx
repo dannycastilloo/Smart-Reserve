@@ -1,11 +1,14 @@
-import { Stats } from "../components/Stats"
+import React from 'react';
+import { Stats } from "../components/Stats";
+
 
 export const StatsScreen = () => {
+
   return (
     <>
       <Stats />
-      <Stats />
-      <Stats />
+      
     </>
   )
 }
+export default StatsScreen;
