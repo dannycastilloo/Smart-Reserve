@@ -377,3 +377,34 @@ h1 {
     color: #363c43;
     font-size: 14px;
 }
+
+@media (width < 768px) {
+    .login-form {
+        left: 6%;
+    }
+}
+
+@media (768px <= width < 1440px) {
+    .logo-login {
+        width: 300px;
+    }
+
+    .title-login {
+        font-size: 18px;
+    }
+
+    .login-form {
+        left: 20%;
+        top: 26%;
+        padding: 5vh;
+    }
+
+    .login-inputs {
+        width: 35vh;
+        margin: 4vh auto;
+    }
+    
+    .login-form button {
+        margin: 2vh auto;
+    }
+}
