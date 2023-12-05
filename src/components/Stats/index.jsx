@@ -1,9 +1,11 @@
 import React from 'react';
 import ReactApexChart from 'react-apexcharts';
-import { Graph } from './Graph';
-import { Graph2 } from './Graph2';
-import { Graph3 } from './Graph3';
-import { Graph4 } from './Graph4';
+import { Graph } from '../graphics/Graph';
+import { Graph2 } from '../graphics/graph2';
+import { Graph3 } from '../graphics/Graph3';
+import { Graph4 } from '../graphics/Graph4';
+
+import './index.scss'
 
 export const Stats = () => {
   return (

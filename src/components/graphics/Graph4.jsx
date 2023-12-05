@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { db } from '../config/firebaseConfig';
+import { db } from '../../config/firebaseConfig';
 import { ref, onValue } from 'firebase/database';
 import ApexCharts from 'react-apexcharts';
 

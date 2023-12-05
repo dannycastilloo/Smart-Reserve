@@ -1,0 +1,37 @@
+@import '../../index.scss';
+
+.topbar {
+    background-color: #448AFF;
+    padding: 2rem 3rem;
+    display: flex;
+}
+
+.nav-logo {
+    display: block;
+    width: 12%;
+}
+
+.nav-profile {
+    margin: auto 0 auto auto;
+}
+
+.nav-icon {
+    display: block;
+    color: white;
+    margin: auto;
+    align-items: center;
+    justify-content: right;
+    width: 3rem;
+    object-fit: cover;
+}
+
+@media (width < 768px) {
+    .nav-logo {
+        width: 12rem;
+    }
+    
+    .nav-icon {
+        width: 2.5rem;
+        object-fit: cover;
+    }
+}

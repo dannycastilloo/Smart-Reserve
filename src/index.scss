@@ -1,0 +1,260 @@
+/* Fonts */
+$inter: 'Inter', sans-serif;
+$nunito: 'Nunito Sans', sans-serif;
+
+/* Text styles */
+.main {
+    margin-left: 150px;
+}
+
+.title {
+    text-align: center;
+    margin-top: 2.5rem;
+    color: #4F5B67;
+    font-size: 24px;
+    font-family: $inter;
+}
+
+.table-head {
+    font-family: $nunito;
+    color: #718096;
+}
+
+.table-content {
+    font-family: $nunito;
+    color: #111827;
+}
+
+/* Buttons */
+.filtros {
+    border: none;
+    border-radius: 10px;
+    padding: 0.5rem 1rem;
+    color: #718096;
+    font-family: $nunito;
+}
+
+.filtros img {
+    width: 22px;
+}
+
+.actions-container {
+    display: flex;
+    margin: 0 auto;
+}
+
+.registrar {
+    color: #0CAF60;
+    background-color: #EDF6ED;
+    border: none;
+    border-radius: 10px;
+    font-family: $nunito;
+    margin: 0;
+    padding: 0.5rem 1rem;
+}
+
+.agregar {
+    color: #0CAF60;
+    background-color: #EDF6ED;
+    border: none;
+    border-radius: 10px;
+    font-family: $nunito;
+    width: 80px;
+    height: 32px;
+    font-size: 14px;
+}
+
+.cancelar {
+    color: #FD6A6A;
+    background-color: #FFECEC;
+    border: none;
+    border-radius: 10px;
+    font-family: $nunito;
+    width: 80px;
+    height: 32px;
+    font-size: 14px;
+}
+
+/* General styles */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Nunito-Regular';
+}
+
+h1 {
+    font-family: $inter;
+}
+
+/* Profile */
+.project-modal {
+    border: 1px solid #cccccc;
+    border-radius: 10px;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    width: 30rem;
+    margin: 0 auto;
+    gap: 1rem;
+
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+}
+
+.project-name {
+    border: 1px solid #cccccc;
+    width: auto;
+    padding: 0.5rem;
+    border-radius: 4px;
+}
+
+.project-modal h1 {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.project-category {
+    width: 14rem;
+    height: 2.25rem;
+    border: 1px solid #cccccc;
+    margin-top: 0.5rem;
+    color: #767676;
+}
+
+.button-filled {
+    border-radius: 4px;
+    background-color: #448AFF;
+    color: white;
+    display: block;
+    margin: 1rem auto;
+    border: none;
+    padding: 0.7rem 1.4rem;
+    width: 100%;
+    font-weight: bold;
+}
+
+.button-filled:hover {
+    background-color: #3677e6;
+}
+
+.button-outline {
+    border-radius: 4px;
+    border: #448AFF 2px solid;
+    color: #448AFF;
+    display: block;
+    margin: 1rem auto;
+    border: none;
+    padding: 0.7rem 1.4rem;
+    width: 100%;
+    font-weight: bold;
+}
+
+.modal-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+}
+
+/* Table */
+.table {
+    margin-top: 2rem;
+}
+
+/* Login */
+.login-container {
+    background: url('../src/assets/background-tecsup.jpg') no-repeat center fixed;
+    background-size: cover;
+    position: relative;
+    width: 100%;
+    height: 100vh;
+}
+
+.logo-login {
+    width: 250px;
+    display: block;
+    margin: 1vh auto 3vh auto;
+}
+
+.title-login {
+    text-align: center;
+    color: #363c43;
+    font-size: 16px;
+    margin: 2vh auto;
+}
+
+.login-form {
+    position: absolute;
+    left: 73%;
+    top: 25%;
+    background-color: #e8e8e8ef;
+    border-radius: 10px;
+    padding: 4vh;
+}
+
+.login-inputs {
+    width: 33vh;
+    display: block;
+    margin: 2vh auto;
+}
+
+.login-form label,
+.login-inputs input {
+    color: #363c43;
+    font-size: 14px;
+}
+
+.login-form button {
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+    padding: 10px;
+}
+
+.error-message {
+    text-align: center;
+    margin-top: 2vh;
+    color: #363c43;
+    font-size: 14px;
+}
+
+@media (width < 768px) {
+    .login-form {
+        left: 6%;
+    }
+}
+
+@media (768px <=width < 1440px) {
+    .logo-login {
+        width: 300px;
+    }
+
+    .title-login {
+        font-size: 18px;
+    }
+
+    .login-form {
+        left: 20%;
+        top: 26%;
+        padding: 5vh;
+    }
+
+    .login-inputs {
+        width: 35vh;
+        margin: 4vh auto;
+    }
+
+    .login-form button {
+        margin: 2vh auto;
+    }
+}

@@ -4,8 +4,11 @@ import { ReserveScreen } from './routes/ReserveScreen';
 import { StatsScreen } from './routes/StatsScreen';
 import { HomeScreen } from './routes/HomeScreen';
 import LoginScreen from './routes/LoginScreen';
+
 import { MayShowNavBar } from './components/MayShowNavBar';
-import NavBar from './components/NavBar';
+import { Topbar } from './components/Topbar'
+import { Sidebar } from './components/Sidebar'
+
 import { getAuth, onAuthStateChanged } from 'firebase/auth';
 import { StoreScreen } from './routes/StoreScreen';
 
@@ -24,7 +27,8 @@ export const App = () => {
   return (
     <>
       <MayShowNavBar>
-        <NavBar />
+        <Topbar />
+        <Sidebar />
       </MayShowNavBar>
 
       <Routes>

@@ -1,12 +1,11 @@
-import { Stats } from "../components/Stats"
-import { Messages } from "../components/Messages"
+import { Stats } from '../components/Stats'
 
 export const HomeScreen = () => {
   return (
     <>
-      <Stats />
-      <Messages />
-
+      <div className='main'>
+        <Stats />
+      </div>
     </>
   )
 }

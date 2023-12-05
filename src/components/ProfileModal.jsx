@@ -2,7 +2,7 @@ export const ProfileModal = ({ closeModal }) => {
     return (
         <>
             <div className="project-modal">
-                <h1 className="title">Editar perfil</h1>
+                <h1 className="title">Mi perfil</h1>
 
                 <label>Nombres</label>
                 <input className="project-name" type="text" id="nombre" name="nombre" placeholder="John" />
@@ -17,8 +17,7 @@ export const ProfileModal = ({ closeModal }) => {
                 <input className="project-name" type="phone" id="celular" name="celular" placeholder="946583472" />
 
                 <div>
-                    <button className="button-filled" onClick={closeModal}>Guardar</button>
-                    <button className="button-outline" onClick={closeModal}>Cancelar</button>
+                    <button className="button-filled" onClick={closeModal}>Cerrar Sesión</button>
                 </div>
             </div>
         </>

@@ -1,13 +1,14 @@
 import React from 'react';
-import { Stats } from "../components/Stats";
+import { Stats } from '../components/Stats'
 
 
 export const StatsScreen = () => {
 
   return (
     <>
-      <Stats />
-      
+      <div className='main'>
+        <Stats />
+      </div>
     </>
   )
 }
