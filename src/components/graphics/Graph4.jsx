@@ -5,7 +5,7 @@ import ApexCharts from 'react-apexcharts';
 
 export const Graph4 = () => {
   const [reservationData, setReservationData] = useState([]);
-  
+
   useEffect(() => {
     const reservationsRef = ref(db, 'PastReserves');
 
@@ -73,11 +73,11 @@ export const Graph4 = () => {
       curve: 'straight'
     },
     title: {
-      
+
       align: 'left'
     },
     subtitle: {
-      
+
       align: 'left'
     },
     labels: Object.keys(reservationData),
@@ -93,14 +93,6 @@ export const Graph4 = () => {
   };
 
   return (
-    <div className="container">
-      <div className="row">
-        <div className="col stats">
-          <div id="chart">
-            <ApexCharts options={chartData} series={chartData.series} type="area" />
-          </div>
-        </div>
-      </div>
-    </div>
+      <ApexCharts options={chartData} series={chartData.series} type="area" />
   );
 };

@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { db } from '../config/firebaseConfig';
+import { db } from '../../config/firebaseConfig';
 import { remove, ref, onValue } from 'firebase/database';
 
-export const TablePC = () => {
+export const PcTable = () => {
     const [computers, setComputers] = useState({});
 
     useEffect(() => {

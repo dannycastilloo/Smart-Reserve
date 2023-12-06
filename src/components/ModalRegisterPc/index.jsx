@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import { db } from '../config/firebaseConfig';
+import { db } from '../../config/firebaseConfig';
 import { ref, push, set } from 'firebase/database';
 
-export const PCModal = ({ closeModal }) => {
+export const ModalRegisterPc = ({ closeModal }) => {
     const [codigo, setCodigo] = useState('');
     const [marca, setMarca] = useState('');
     const [modelo, setModelo] = useState('');

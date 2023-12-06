@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { db } from '../config/firebaseConfig';
+import { db } from '../../config/firebaseConfig'
 import { ref, onValue, update, push, remove } from 'firebase/database';
 
-export const Table = () => {
+export const ReserveTable = () => {
     const [reservations, setReservations] = useState([]);
     const [computers, setComputers] = useState({});
     const [users, setUsers] = useState({});

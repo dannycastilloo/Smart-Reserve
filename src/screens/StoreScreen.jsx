@@ -1,4 +1,5 @@
-import { TablePC } from "../components/TablePC"
+import { FilterTable } from "../components/FilterTable"
+import { PcTable } from '../components/PcTable'
 
 export const StoreScreen = () => {
 
@@ -6,7 +7,8 @@ export const StoreScreen = () => {
         <>
             <div className="main">
                 <h1 className="title">Almacén de Computadoras</h1>
-                <TablePC />
+                <FilterTable />
+                <PcTable />
             </div>
         </>
     )

@@ -1,28 +1,27 @@
 @import '../../index.scss';
 
 .no-style-button {
-    width: 2rem;
-}
-
-.button-add {
-    width: 2rem;
-}
-
-.user-icon {
-    width: 2rem;
-}
-
-.no-style-button {
     background: none;
     border: 0;
     overflow: visible;
     display: flex;
+    gap: 1.2rem;
 }
 
 .user-icon {
-    width: 35px;
+    width: 50px;
     display: block;
     justify-content: center;
     margin: auto;
     align-items: center;
+}
+
+.user-info {
+    display: flex;
+    flex-direction: column;
+    width: 8rem;
+}
+
+.user-info > span {
+    text-align: left;
 }

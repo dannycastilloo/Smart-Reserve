@@ -1,0 +1,67 @@
+@import '../../index.scss';
+
+.alert {
+    border: 1px solid #cccccc;
+    border-radius: 10px;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    gap: 1rem;
+    position: fixed;
+    top: 50%;
+    left: 55%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+}
+
+.modal-title {
+    text-align: center;
+}
+
+.button-group {
+    display: flex;
+    gap: 10px;
+    margin: 0 auto;
+}
+
+.modal-si {
+    background-color: white;
+    color: rgb(115, 184, 115);
+    padding: 5px 20px;
+    border-radius: 4px;
+    border: 1px solid rgb(115, 184, 115);
+}
+
+.modal-si:hover {
+    background-color: rgb(115, 184, 115);
+    color: white;
+    border: 1px solid rgb(115, 184, 115);
+}
+
+.modal-no {
+    background-color: white;
+    color: rgb(255, 93, 93);
+    padding: 5px 20px;
+    border-radius: 4px;
+    border: 1px solid rgb(255, 93, 93);;
+}
+
+.modal-no:hover {
+    background-color: rgb(255, 93, 93);
+    color: white;
+    border: 1px solid rgb(255, 93, 93);;
+}
+
+@media (width < 768px) {
+    .alert {
+        padding: 1.5rem 2rem;
+        left: 60%;
+    }
+
+    .modal-title {
+        font-size: 16px;
+    }
+}

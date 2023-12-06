@@ -1,0 +1,20 @@
+@import '../../index.scss';
+
+.registrar {
+    color: #0CAF60;
+    background-color: #E7F7EF;
+    border: none;
+    border-radius: 10px;
+    font-weight: bold;
+    margin: 0;
+    padding: 0.6rem 2rem;
+    text-decoration: none;
+}
+
+@media (width < 768px) {
+    .registrar {
+        border-radius: 10px;
+        font-weight: bold;
+        padding: 0.6rem 1rem;
+    }
+}

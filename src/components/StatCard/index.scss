@@ -1,0 +1,15 @@
+@import '../../index.scss';
+
+.stat-card {
+    border: 2px solid #ccc;
+    border-radius: 25px;
+    padding: 3rem 3rem 2rem 3rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    width: 30rem;
+}
+
+.stat-card > h3 {
+    font-size: 20px;
+    text-align: center;
+    margin-bottom: 2.4rem;
+}

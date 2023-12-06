@@ -5,7 +5,7 @@ import ReactApexChart from 'react-apexcharts';
 
 export const Graph3 = () => {
   const [usersByCareer, setUsersByCareer] = useState({});
-  
+
   useEffect(() => {
     const usersRef = ref(db, 'Users');
 
@@ -85,14 +85,6 @@ export const Graph3 = () => {
   };
 
   return (
-    <div className="container">
-      <div className="row">
-        <div className="col stats">
-          <div id="chart">
-            <ReactApexChart options={chartData.options} series={chartData.series} type="radialBar" />
-          </div>
-        </div>
-      </div>
-    </div>
+    <ReactApexChart options={chartData.options} series={chartData.series} type="radialBar" />
   );
 };

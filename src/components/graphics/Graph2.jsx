@@ -13,7 +13,7 @@ export const Graph2 = () => {
       const reservesData = snapshot.val();
 
       if (reservesData) {
-        
+
         const allReserves = Object.values(reservesData);
         setReserves(allReserves);
       }
@@ -27,7 +27,7 @@ export const Graph2 = () => {
         width: 360,
         type: 'donut',
       },
-      labels: ['SapLogon, Bizagi','NetBeans, Xcode', 'Xamarin, Eclipse', 'Node, Visual Studio'],
+      labels: ['SapLogon, Bizagi', 'NetBeans, Xcode', 'Xamarin, Eclipse', 'Node, Visual Studio'],
     },
   };
 
@@ -45,14 +45,6 @@ export const Graph2 = () => {
   });
 
   return (
-    <div className="container">
-      <div className="row">
-        <div className="col stats">
-          <div id="chart">
-            <ReactApexChart options={chartData.options} series={chartData.series} type="donut" />
-          </div>
-        </div>
-      </div>
-    </div>
+    <ReactApexChart options={chartData.options} series={chartData.series} type="donut" />
   );
 }

@@ -13,7 +13,7 @@ export const Graph = () => {
       const reservesData = snapshot.val();
 
       if (reservesData) {
-        
+
         const allReserves = Object.values(reservesData);
         setReserves(allReserves);
       }
@@ -45,14 +45,6 @@ export const Graph = () => {
   });
 
   return (
-    <div className="container">
-      <div className="row">
-        <div className="col stats">
-          <div id="chart">
-            <ReactApexChart options={chartData.options} series={chartData.series} type="pie" />
-          </div>
-        </div>
-      </div>
-    </div>
+    <ReactApexChart options={chartData.options} series={chartData.series} type="pie" />
   );
 }

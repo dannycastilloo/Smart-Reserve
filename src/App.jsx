@@ -1,16 +1,16 @@
 import React, { useEffect, useState } from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
-import { ReserveScreen } from './routes/ReserveScreen';
-import { StatsScreen } from './routes/StatsScreen';
-import { HomeScreen } from './routes/HomeScreen';
-import LoginScreen from './routes/LoginScreen';
+import { ReserveScreen } from './screens/ReserveScreen';
+import { StatsScreen } from './screens/StatsScreen';
+import { HomeScreen } from './screens/HomeScreen';
+import LoginScreen from './screens/LoginScreen';
+import { StoreScreen } from './screens/StoreScreen';
 
 import { MayShowNavBar } from './components/MayShowNavBar';
 import { Topbar } from './components/Topbar'
 import { Sidebar } from './components/Sidebar'
 
 import { getAuth, onAuthStateChanged } from 'firebase/auth';
-import { StoreScreen } from './routes/StoreScreen';
 
 export const App = () => {
   const [user, setUser] = useState(null);

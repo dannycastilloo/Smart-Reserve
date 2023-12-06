@@ -1,3 +1,5 @@
+import { NavLink } from 'react-router-dom'
+
 export const ProfileModal = ({ closeModal }) => {
     return (
         <>
@@ -16,9 +18,7 @@ export const ProfileModal = ({ closeModal }) => {
                 <label>Celular</label>
                 <input className="project-name" type="phone" id="celular" name="celular" placeholder="946583472" />
 
-                <div>
-                    <button className="button-filled" onClick={closeModal}>Cerrar Sesión</button>
-                </div>
+                <NavLink to='/login' className="button-filled" onClick={closeModal}>Cerrar Sesión</NavLink>
             </div>
         </>
     )

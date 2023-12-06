@@ -1,4 +1,5 @@
-import { Table } from "../components/Table"
+import { FilterTable } from '../components/FilterTable'
+import { ReserveTable } from '../components/ReserveTable'
 
 export const ReserveScreen = () => {
 
@@ -6,7 +7,8 @@ export const ReserveScreen = () => {
     <>
       <div className="main">
         <h1 className="title">Listado de Reservas</h1>
-        <Table />
+        <FilterTable />
+        <ReserveTable />
       </div>
     </>
   )

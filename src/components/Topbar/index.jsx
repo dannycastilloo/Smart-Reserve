@@ -1,7 +1,8 @@
 import { useState, useEffect, useRef } from 'react'
 import { NavLink } from "react-router-dom"
 
-import { ButtonProfile } from "../ButtonProfile"
+import { ProfileModal } from '../ProfileModal'
+import { ProfileButton } from "../ProfileButton"
 
 import './index.scss'
 
@@ -36,9 +37,12 @@ export const Topbar = () => {
   return (
     <>
       <div className='topbar'>
-        <NavLink to='/home'><img className='nav-logo' src="../src/assets/tecsup.png" alt="TECSUP" /></NavLink>
-        <ButtonProfile onClick={openModal} />
+        <NavLink to='/home'>
+          <img className='nav-logo' src="../src/assets/tecsup.png" alt="TECSUP" />
+        </NavLink>
+        <ProfileButton onClick={openModal} />
       </div>
+
       {isModalOpen && (
         <>
           <div className="modal-background"></div>
