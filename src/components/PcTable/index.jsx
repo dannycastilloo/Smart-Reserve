@@ -44,10 +44,18 @@ export const PcTable = () => {
                 <tbody>
                     {Object.values(computers).map((computer) => (
                         <tr key={computer.Id}>
-                            <td className="table-content">{computer.Codigo}</td>
-                            <td className="table-content">{computer.Software}</td>
-                            <td className="table-content">{computer.Brand}</td>
-                            <td className="table-content">{computer.Model}</td>
+                            <td className="table-content" data-titulo='Código'>
+                                {computer.Codigo}
+                            </td>
+                            <td className="table-content" data-titulo='Software'>
+                                {computer.Software}
+                            </td>
+                            <td className="table-content" data-titulo='Marca'>
+                                {computer.Brand}
+                            </td>
+                            <td className="table-content" data-titulo='Modelo'>
+                                {computer.Model}
+                            </td>
                             <td className="actions-container">
                                 <button className="cancelar" onClick={() => deleteComputer(computer.Id)}>Eliminar</button>
                             </td>

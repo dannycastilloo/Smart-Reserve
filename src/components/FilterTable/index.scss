@@ -2,7 +2,6 @@
 
 .filter-table {
     display: flex;
-    flex-wrap: wrap;
     gap: 1rem;
     align-items: center;
     margin: 2rem 0;
@@ -13,4 +12,21 @@
     border-radius: 4px;
     padding: 5px;
     width: 40rem;
+}
+
+@media (width < 768px) {  
+    .filter-table {
+        flex-direction: column;
+        margin: 1.2rem 0;
+    } 
+
+    .filter > input {
+        width: 15rem;
+    }
+}
+
+@media (768px <= width < 1440px) {
+    .filter > input {
+        width: 25rem;
+    }
 }

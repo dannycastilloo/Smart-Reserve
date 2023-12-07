@@ -22,6 +22,21 @@
     width: 8rem;
 }
 
-.user-info > span {
+.user-info>span {
     text-align: left;
+}
+
+@media (width < 768px) {
+    .user-icon {
+        width: 30px;
+        object-fit: cover;
+    }
+
+    .user-info {
+        width: 5rem;
+    }
+
+    .user-info>span {
+        font-size: 12px;
+    }
 }

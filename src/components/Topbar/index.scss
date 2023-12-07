@@ -12,12 +12,19 @@
 }
 
 @media (width < 768px) {
-    .nav-logo {
-        width: 12rem;
+    .topbar {
+        padding: 1.2rem;
     }
-    
-    .nav-icon {
-        width: 2.5rem;
+
+    .nav-logo {
+        width: 50%;
+        object-fit: cover;
+    }
+}
+
+@media (768px <= width < 1440px) {
+    .nav-logo {
+        width: 35%;
         object-fit: cover;
     }
 }

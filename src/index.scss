@@ -44,6 +44,7 @@ h1 {
 .table {
     margin-top: 1rem;
     width: 80%;
+    border-collapse: collapse;
 }
 
 .table-head {
@@ -252,12 +253,68 @@ h1 {
 }
 
 @media (width < 768px) {
+    .main {
+        margin-left: 75px;
+    }
+
+    .table {
+        border: 1px solid #ccc;
+    }
+
+    .table thead {
+        display: none;
+    }
+
+    .table tr {
+        display: flex;
+        flex-direction: column;
+        border: 1px solid #ccc;
+    }
+
+    .table td {
+        border: 1px solid #ffffff;
+        text-align: center;
+    }
+
+    .table td[data-titulo] {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .table td[data-titulo]::before {
+        content: attr( data-titulo );
+        font-weight: bold;
+    }
+
+    .title {
+        margin-top: 2.5rem;
+        font-size: 18px;
+    }
+
+    .stats {
+        gap: 2rem;
+        margin: 2rem auto;
+    }
+
     .login-form {
         left: 6%;
     }
 }
 
-@media (768px <=width < 1440px) {
+@media (768px <= width < 1440px) {
+    .main {
+        margin-left: 110px;
+    }
+
+    .table {
+        font-size: 14px;
+        width: 90%;
+    }
+
+    .stats {
+        gap: 3rem;
+    }
+
     .logo-login {
         width: 300px;
     }

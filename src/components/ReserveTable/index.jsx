@@ -29,7 +29,7 @@ export const ReserveTable = () => {
         onValue(reservationsRef, (snapshot) => {
             const reservationsData = snapshot.val();
             if (reservationsData) {
-                const reservationsArray = Object.entries(reservationsData).map(([key, value]) => ({...value, key}));
+                const reservationsArray = Object.entries(reservationsData).map(([key, value]) => ({ ...value, key }));
                 setReservations(reservationsArray);
             }
         });
@@ -40,15 +40,15 @@ export const ReserveTable = () => {
     const confirmReservation = (reservation) => {
         const reservationRef = ref(db, `Reserves/${reservation.key}`);
         update(reservationRef, { State: 'Aceptada' });
-    };    
+    };
 
     const rejectReservation = (reservation) => {
         const reservationRef = ref(db, `Reserves/${reservation.key}`);
         update(reservationRef, { State: 'Rechazada', Active: 0 });
-    
+
         const pastReservesRef = ref(db, 'PastReserves');
         push(pastReservesRef, reservation);
-    
+
         remove(reservationRef);
     };
 
@@ -69,12 +69,24 @@ export const ReserveTable = () => {
                 <tbody>
                     {Object.values(reservations).map((reservation) => (
                         <tr key={reservation.ReserveId}>
-                            <td className="table-content">{computers[reservation.ComputerId]?.Codigo || 'N/A'}</td>
-                            <td className="table-content">{reservation.ReserveId}</td>
-                            <td className="table-content">{`${users[reservation.UserId]?.Name} ${users[reservation.UserId]?.LastName}` || 'N/A'}</td>
-                            <td className="table-content">{reservation.State}</td>
-                            <td className="table-content">{reservation.DatetimeStart}</td>
-                            <td className="table-content">{reservation.DatetimeEnd}</td>
+                            <td className="table-content" data-titulo='Computadora'>
+                                {computers[reservation.ComputerId]?.Codigo || 'N/A'}
+                            </td>
+                            <td className="table-content" data-titulo='Reserva'>
+                                {reservation.ReserveId}
+                            </td>
+                            <td className="table-content" data-titulo='Usuario'>
+                                {`${users[reservation.UserId]?.Name} ${users[reservation.UserId]?.LastName}` || 'N/A'}
+                            </td>
+                            <td className="table-content" data-titulo='Estado'>
+                                {reservation.State}
+                            </td>
+                            <td className="table-content" data-titulo='Hora Inicio'>
+                                {reservation.DatetimeStart}
+                            </td>
+                            <td className="table-content" data-titulo='Hora Final'>
+                                {reservation.DatetimeEnd}
+                            </td>
                             <td className="actions-container">
                                 <button className="agregar" onClick={() => confirmReservation(reservation)}>Confirmar</button>
                                 <button className="cancelar" onClick={() => rejectReservation(reservation)}>Rechazar</button>
