@@ -9,6 +9,12 @@
     margin: 0;
     padding: 0.6rem 2rem;
     text-decoration: none;
+    transition: all .3s ease;
+}
+
+.registrar:hover {
+    background-color: #0CAF60;
+    color: white;
 }
 
 @media (width < 768px) {

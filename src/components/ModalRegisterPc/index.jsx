@@ -9,37 +9,29 @@ export const ModalRegisterPc = ({ closeModal }) => {
     const [software, setSoftware] = useState('');
 
     const handleGuardarClick = () => {
-        // Verifica que todos los campos estén completos
         if (codigo && marca && modelo && software) {
-            // Crea un nuevo registro en la base de datos
             const computersRef = ref(db, 'Computers');
             const newComputerRef = push(computersRef);
     
-            // Obtén la clave única generada por push y úsala como el ID
             const newComputerId = newComputerRef.key;
     
-            // Define los datos para el nuevo registro, incluyendo el ID
             const newComputerData = {
-                Id: newComputerId, // Asigna la clave como el ID
+                Id: newComputerId,
                 Codigo: codigo,
                 Brand: marca,
                 Model: modelo,
                 Software: software,
-                Available: true, // Puedes establecer el estado inicial como desees
+                Available: true,
             };
     
-            // Crea una referencia específica para el nuevo registro
             const specificComputerRef = ref(db, `Computers/${newComputerId}`);
     
-            // Sube los datos a la base de datos
             set(specificComputerRef, newComputerData).then(() => {
-                // Cierra el modal
                 closeModal();
             }).catch((error) => {
                 console.error('Error al guardar el equipo:', error);
             });
         } else {
-            // Muestra un mensaje de error o realiza otra acción en caso de que los campos estén incompletos
             alert('Por favor, completa todos los campos.');
         }
     };    

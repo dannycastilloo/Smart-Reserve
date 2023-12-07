@@ -105,6 +105,12 @@ h1 {
     width: 80px;
     height: 32px;
     font-size: 14px;
+    transition: all .3s ease;
+}
+
+.cancelar:hover {
+    color: #FFECEC;
+    background-color: #FD6A6A;
 }
 
 /* Profile */
@@ -158,6 +164,7 @@ h1 {
     font-weight: bold;
     text-decoration: none;
     text-align: center;
+    transition: all .3s ease;
 }
 
 .button-filled:hover {
@@ -174,6 +181,11 @@ h1 {
     padding: 0.7rem 1.4rem;
     width: 100%;
     font-weight: bold;
+    transition: all .3s ease;
+}
+
+.button-outline:hover {
+    background-color: #dcdcdc;
 }
 
 .modal-background {
@@ -258,7 +270,7 @@ h1 {
     }
 
     .table {
-        border: 1px solid #ccc;
+        border: 1px solid #fff;
     }
 
     .table thead {
@@ -269,6 +281,10 @@ h1 {
         display: flex;
         flex-direction: column;
         border: 1px solid #ccc;
+        margin-bottom: 2rem;
+        border-radius: 25px;
+        padding: 1.2rem 0;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     }
 
     .table td {
@@ -298,6 +314,28 @@ h1 {
 
     .login-form {
         left: 6%;
+    }
+
+    .project-modal {
+        padding: 0 1rem;
+        width: 20rem;
+        gap: 10px;
+    }
+
+    .project-name {
+        padding: 0.3rem 0.5rem;
+        font-size: 14px;
+    }
+
+    .button-filled {
+        margin: 10px auto 20px auto;
+        padding: 0.5rem 0;
+        font-weight: bold;
+    }
+    
+    .button-outline {
+        margin: 0 auto 20px auto;
+        padding: 0.5rem 0;
     }
 }
 
