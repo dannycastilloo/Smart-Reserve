@@ -1,6 +1,6 @@
 import { db } from '../config/firebaseConfig'
 import { useState, useEffect } from 'react'
-import { onValue, ref } from 'firebase/database'
+import { onValue, ref, update, push, remove } from 'firebase/database'
 
 export const useReserve = () => {
     const [reservations, setReservations] = useState({});
@@ -22,3 +22,18 @@ export const useReserve = () => {
         { reservations, loading }
     )
 }
+
+export const confirmReservation = (reservation) => {
+    const reservationRef = ref(db, `Reserves/${reservation.key}`);
+    update(reservationRef, { State: 'Aceptada' });
+};
+
+export const rejectReservation = (reservation) => {
+    const reservationRef = ref(db, `Reserves/${reservation.key}`);
+    update(reservationRef, { State: 'Rechazada', Active: 0 });
+
+    const pastReservesRef = ref(db, 'PastReserves');
+    push(pastReservesRef, reservation);
+
+    remove(reservationRef);
+};

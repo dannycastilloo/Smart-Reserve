@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { db } from '../../config/firebaseConfig'
-import { ref, onValue, update, push, remove } from 'firebase/database';
-import { useReserve } from '../../hooks/useReserve'
+import { ref, onValue } from 'firebase/database';
+import { useReserve, confirmReservation, rejectReservation } from '../../hooks/useReserve'
 
 export const ReserveTable = () => {
     const { reservations, loading } = useReserve()
@@ -27,21 +27,9 @@ export const ReserveTable = () => {
         });
     }, []);
 
-    // Manejo de reservas
-    const confirmReservation = (reservation) => {
-        const reservationRef = ref(db, `Reserves/${reservation.key}`);
-        update(reservationRef, { State: 'Aceptada' });
-    };
-
-    const rejectReservation = (reservation) => {
-        const reservationRef = ref(db, `Reserves/${reservation.key}`);
-        update(reservationRef, { State: 'Rechazada', Active: 0 });
-
-        const pastReservesRef = ref(db, 'PastReserves');
-        push(pastReservesRef, reservation);
-
-        remove(reservationRef);
-    };
+    if (loading) {
+        return <div>Cargando...</div>
+    }
 
     return (
         <>

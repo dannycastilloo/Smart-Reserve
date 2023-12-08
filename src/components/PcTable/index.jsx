@@ -1,4 +1,4 @@
-import { useComputer } from '../../hooks/useComputer'
+import { useComputer, deleteComputer } from '../../hooks/useComputer'
 
 export const PcTable = () => {
     
