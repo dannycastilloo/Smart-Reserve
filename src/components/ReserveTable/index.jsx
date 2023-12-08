@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { db } from '../../config/firebaseConfig'
 import { ref, onValue, update, push, remove } from 'firebase/database';
+import { useReserve } from '../../hooks/useReserve'
 
 export const ReserveTable = () => {
-    const [reservations, setReservations] = useState([]);
+    const { reservations, loading } = useReserve()
     const [computers, setComputers] = useState({});
     const [users, setUsers] = useState({});
 
     useEffect(() => {
-        const reservationsRef = ref(db, 'Reserves');
         const computersRef = ref(db, 'Computers');
         const usersRef = ref(db, 'Users');
 
@@ -25,15 +25,6 @@ export const ReserveTable = () => {
                 setUsers(usersData);
             }
         });
-
-        onValue(reservationsRef, (snapshot) => {
-            const reservationsData = snapshot.val();
-            if (reservationsData) {
-                const reservationsArray = Object.entries(reservationsData).map(([key, value]) => ({ ...value, key }));
-                setReservations(reservationsArray);
-            }
-        });
-
     }, []);
 
     // Manejo de reservas

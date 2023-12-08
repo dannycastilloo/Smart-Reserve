@@ -1,33 +1,12 @@
-import React, { useState, useEffect } from 'react';
-import { db } from '../../config/firebaseConfig';
-import { remove, ref, onValue } from 'firebase/database';
+import { useComputer } from '../../hooks/useComputer'
 
 export const PcTable = () => {
-    const [computers, setComputers] = useState({});
+    
+    const { computers, loading } = useComputer()
 
-    useEffect(() => {
-        const computersRef = ref(db, 'Computers');
-
-        onValue(computersRef, (snapshot) => {
-            const computersData = snapshot.val();
-            if (computersData) {
-                setComputers(computersData);
-            }
-        });
-    }, []);
-
-    const deleteComputer = (computerId) => {
-        const computersRef = ref(db, `Computers/${computerId}`);
-
-        remove(computersRef)
-            .then(() => {
-                console.log('Computadora eliminada correctamente.');
-            })
-            .catch((error) => {
-                console.error('Error al eliminar la computadora:', error);
-            });
-    };
-
+    if (loading) {
+        return <div>Cargando...</div>
+    }
 
     return (
         <>
