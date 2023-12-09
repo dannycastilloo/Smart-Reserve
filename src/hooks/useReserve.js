@@ -7,7 +7,7 @@ export const useReserve = () => {
     const [loading, setLoading] = useState(true)
 
     useEffect(() => {
-        const reservationsRef = ref(db, 'Reservations');
+        const reservationsRef = ref(db, 'PastReserves');
 
         onValue(reservationsRef, (snapshot) => {
             const reservationsData = snapshot.val();
