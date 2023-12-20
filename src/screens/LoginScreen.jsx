@@ -25,7 +25,7 @@ const LoginScreen = () => {
   return (
     <div className="login-container">
       <div className="login-form">
-        <img className="logo-login" src="../src/assets/tecsup.png" alt="TECSUP" />
+        <img className="logo-login" src="/tecsup.png" alt="TECSUP" />
         
         <form onSubmit={handleLogin} className="login-inputs">
         <p className="title-login">Sistema de administración para la reserva de computadoras</p>

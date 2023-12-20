@@ -1,7 +1,6 @@
 import { StatCard } from '../components/StatCard'
 import { Graph2 } from '../components/graphics/Graph2'
 import { Graph3 } from '../components/graphics/Graph3'
-import { ReserveTable } from '../components/ReserveTable'
 
 export const HomeScreen = () => {
   return (
@@ -18,9 +17,6 @@ export const HomeScreen = () => {
             title={'Estado de las reservas'}
             graph={<Graph3 />} />
         </div>
-
-        <h3 className='subtitle'>Últimas reservas</h3>
-        <ReserveTable />
       </div>
     </>
   )

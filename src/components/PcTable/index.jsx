@@ -1,12 +1,19 @@
 import { useComputer, deleteComputer } from '../../hooks/useComputer'
 
-export const PcTable = () => {
-    
+export const PcTable = ({ search }) => {
+
     const { computers, loading } = useComputer()
 
     if (loading) {
         return <div>Cargando...</div>
     }
+
+    const filteredComputers = Object.values(computers).filter((computer) =>
+        computer.Codigo.toLowerCase().includes(search.toLowerCase()) ||
+        computer.Software.toLowerCase().includes(search.toLowerCase()) ||
+        computer.Brand.toLowerCase().includes(search.toLowerCase()) ||
+        computer.Model.toLowerCase().includes(search.toLowerCase())
+    )
 
     return (
         <>
@@ -21,7 +28,7 @@ export const PcTable = () => {
                     </tr>
                 </thead>
                 <tbody>
-                    {Object.values(computers).map((computer) => (
+                    {filteredComputers.map((computer) => (
                         <tr key={computer.Id}>
                             <td className="table-content" data-titulo='Código'>
                                 {computer.Codigo}

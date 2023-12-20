@@ -1,13 +1,24 @@
 import { useReserve } from '../../hooks/useReserve'
 import { format } from 'date-fns'
 
-export const ReserveTable = () => {
+export const ReserveTable = ({ search }) => {
+
     const { reservations, loading } = useReserve()
 
     const formatearFecha = (fecha) => {
         const fechaObjeto = new Date(fecha);
         return format(fechaObjeto, 'dd/MM/yyyy');
-    };
+    }
+
+    const filteredReservations = Object.values(reservations).filter((reservation) =>
+        String(reservation.UserId).includes(search) ||
+        formatearFecha(reservation.FechaHoraInicio).includes(search) ||
+        formatearFecha(reservation.FechaHoraFin).includes(search)
+    );
+
+    if (loading) {
+        return <p>Cargando...</p>;
+    }
 
     return (
         <>
@@ -21,8 +32,8 @@ export const ReserveTable = () => {
                     </tr>
                 </thead>
                 <tbody>
-                    {Object.values(reservations).map((reservation) => (
-                        <tr key={reservation.ComputerId}>
+                    {filteredReservations.map((reservation, index) => (
+                        <tr key={reservation.DatabaseId || index}>
                             <td className="table-content" data-titulo='Software'>
                                 {reservation.UserId}
                             </td>
@@ -32,11 +43,15 @@ export const ReserveTable = () => {
                             <td className="table-content" data-titulo='Modelo'>
                                 {formatearFecha(reservation.FechaHoraFin)}
                             </td>
-                            <td className="actions-container">
-                                <button className="cancelar" onClick={() => deleteComputer(reservation.Id)}>Eliminar</button>
+                            <td>
+                                <div className="actions-container">
+                                    <button className="agregar">Aceptar</button>
+                                    <button className="cancelar" onClick={() => deleteComputer(reservation.Id)}>Rechazar</button>
+                                </div>
                             </td>
                         </tr>
                     ))}
+
                 </tbody>
             </table>
         </>

@@ -77,6 +77,9 @@ h1 {
 .actions-container {
     display: flex;
     margin: 0 auto;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
 }
 
 .registrar {
@@ -100,6 +103,11 @@ h1 {
     font-size: 14px;
 }
 
+.agregar:hover {
+    color: #FFECEC;
+    background-color: #58be7f;
+}
+
 .cancelar {
     color: #FD6A6A;
     background-color: #FFECEC;
@@ -110,7 +118,7 @@ h1 {
     font-size: 14px;
     transition: all .3s ease;
     display: flex;
-    margin: 0 auto;
+    margin: 0;
 }
 
 .cancelar:hover {
@@ -214,7 +222,7 @@ h1 {
 
 /* Login */
 .login-container {
-    background: url('../src/assets/background-tecsup.jpg') no-repeat center fixed;
+    background: url('/background-tecsup.jpg') no-repeat center fixed;
     background-size: cover;
     position: relative;
     width: 100%;

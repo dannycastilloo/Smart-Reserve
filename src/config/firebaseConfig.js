@@ -3,13 +3,13 @@ import { getAuth } from 'firebase/auth';
 import { getDatabase } from 'firebase/database';
 
 const firebaseConfig = {
-  apiKey: import.meta.env.VITE_REACT_APP_apiKey,
-  authDomain: import.meta.env.VITE_REACT_APP_authDomain,
-  projectId: import.meta.env.VITE_REACT_APP_projectId,
-  databaseURL: import.meta.env.VITE_REACT_APP_databaseUrl,
-  storageBucket: import.meta.env.VITE_REACT_APP_storageBucket,
-  messagingSenderId: import.meta.env.VITE_REACT_APP_messagingSenderId,
-  appId: import.meta.env.VITE_REACT_APP_appId
+  apiKey: "AIzaSyD5JuYhNdWuB5G5Xy_D3Uo3oyzTqjXk974",
+  authDomain: "reservacomputadorastecsup.firebaseapp.com",
+  databaseURL: "https://reservacomputadorastecsup-default-rtdb.firebaseio.com",
+  projectId: "reservacomputadorastecsup",
+  storageBucket: "reservacomputadorastecsup.appspot.com",
+  messagingSenderId: "688308219443",
+  appId: "1:688308219443:web:4961ed0fc6514fde42bd46"
 };
 
 const app = initializeApp(firebaseConfig);

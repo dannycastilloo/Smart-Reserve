@@ -1,6 +1,5 @@
 import { useState, useEffect, useRef } from 'react'
 import { NavLink } from "react-router-dom"
-
 import { ProfileModal } from '../ProfileModal'
 import { ProfileButton } from "../ProfileButton"
 
@@ -38,7 +37,7 @@ export const Topbar = () => {
     <>
       <div className='topbar'>
         <NavLink to='/home'>
-          <img className='nav-logo' src="../src/assets/tecsup.png" alt="TECSUP" />
+          <img className='nav-logo' src="/tecsup.png" alt="TECSUP" />
         </NavLink>
         <ProfileButton onClick={openModal} />
       </div>

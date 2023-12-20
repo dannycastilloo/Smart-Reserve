@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { db } from '../../config/firebaseConfig';
 import { ref, onValue } from 'firebase/database';
 import ReactApexChart from 'react-apexcharts';
@@ -21,7 +21,7 @@ export const Graph2 = () => {
   }, []);
 
   const chartData = {
-    series: [0, 0, 0, 0], // Inicializa los valores en 0
+    series: [0, 0, 0, 0],
     options: {
       chart: {
         width: 360,
