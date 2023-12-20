@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react'
 import { onValue, ref, remove, getDatabase } from 'firebase/database'
 
 export const useComputer = () => {
+    
     const [computers, setComputers] = useState({});
     const [loading, setLoading] = useState(true)
 
@@ -27,6 +28,7 @@ export const deleteComputer = async (id) => {
     const computerRef = ref(db, 'Computers/' + id);
     try {
         await remove(computerRef);
+        window.location.reload();
         console.log("Registro eliminado exitosamente");
     } catch (error) {
         console.error("Error al eliminar el registro: ", error);

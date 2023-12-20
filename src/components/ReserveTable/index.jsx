@@ -1,20 +1,33 @@
+import { db } from '../../config/firebaseConfig'
 import { useReserve } from '../../hooks/useReserve'
 import { format } from 'date-fns'
+import { ref, remove, getDatabase } from 'firebase/database'
+import { useState } from 'react'
 
 export const ReserveTable = ({ search }) => {
 
     const { reservations, loading } = useReserve()
+    const [hiddenReservations, setHiddenReservations] = useState({})
 
-    const formatearFecha = (fecha) => {
-        const fechaObjeto = new Date(fecha);
+    function formatFecha(input) {
+        const fechaObjeto = new Date(input);
+
+        if (isNaN(fechaObjeto.getTime())) {
+            return "Invalid Date";
+        }
+
         return format(fechaObjeto, 'dd/MM/yyyy');
     }
 
     const filteredReservations = Object.values(reservations).filter((reservation) =>
         String(reservation.UserId).includes(search) ||
-        formatearFecha(reservation.FechaHoraInicio).includes(search) ||
-        formatearFecha(reservation.FechaHoraFin).includes(search)
+        formatFecha(reservation.FechaHoraInicio).includes(search) ||
+        formatFecha(reservation.FechaHoraFin).includes(search)
     );
+
+    const hideReservation = (id) => {
+        setHiddenReservations({...hiddenReservations, [id]: true});
+    };
 
     if (loading) {
         return <p>Cargando...</p>;
@@ -32,26 +45,31 @@ export const ReserveTable = ({ search }) => {
                     </tr>
                 </thead>
                 <tbody>
-                    {filteredReservations.map((reservation, index) => (
-                        <tr key={reservation.DatabaseId || index}>
-                            <td className="table-content" data-titulo='Software'>
-                                {reservation.UserId}
-                            </td>
-                            <td className="table-content" data-titulo='Marca'>
-                                {formatearFecha(reservation.FechaHoraInicio)}
-                            </td>
-                            <td className="table-content" data-titulo='Modelo'>
-                                {formatearFecha(reservation.FechaHoraFin)}
-                            </td>
-                            <td>
-                                <div className="actions-container">
-                                    <button className="agregar">Aceptar</button>
-                                    <button className="cancelar" onClick={() => deleteComputer(reservation.Id)}>Rechazar</button>
-                                </div>
-                            </td>
-                        </tr>
-                    ))}
+                    {filteredReservations.map((reservation, index) => {
+                        if (hiddenReservations[reservation.ComputerId]) {
+                            return null;  // No renderizar esta reserva si está oculta.
+                        }
 
+                        return (
+                            <tr key={reservation.DatabaseId || index}>
+                                <td className="table-content" data-titulo='Software'>
+                                    {reservation.UserId}
+                                </td>
+                                <td className="table-content" data-titulo='Marca'>
+                                    {formatFecha(reservation.FechaHoraInicio)}
+                                </td>
+                                <td className="table-content" data-titulo='Modelo'>
+                                    {formatFecha(reservation.FechaHoraFin)}
+                                </td>
+                                <td>
+                                    <div className="actions-container">
+                                        <button className="agregar">Aceptar</button>
+                                        <button className="cancelar" onClick={() => hideReservation(reservation.ComputerId)}>Rechazar</button>
+                                    </div>
+                                </td>
+                            </tr>
+                        );
+                    })}
                 </tbody>
             </table>
         </>

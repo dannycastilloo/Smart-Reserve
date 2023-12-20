@@ -25,22 +25,37 @@ nav {
     font-size: 14px;
 }
 
-nav > .nav-link:hover {
+nav>.nav-link:hover {
     background-color: #448AFF;
     color: white;
 }
 
-.nav-link > img {
+.nav-link>img {
     margin: 10px auto;
 }
 
-.nav-link > * {
+.nav-link>* {
     align-items: center;
     display: block;
 }
 
 @media (width < 768px) {
     nav {
+        flex-direction: row;
+        height: auto;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        bottom: 0;
+        border: 1px solid #ccc;
+        z-index: 1000;
+    }
+
+    .nav-link {
+        padding: 5px 30px;
+        text-align: center;
+        cursor: pointer;
+        align-items: center;
         width: auto;
     }
 
