@@ -1,7 +1,5 @@
-import { db } from '../../config/firebaseConfig'
 import { useReserve } from '../../hooks/useReserve'
 import { format } from 'date-fns'
-import { ref, remove, getDatabase } from 'firebase/database'
 import { useState } from 'react'
 
 export const ReserveTable = ({ search }) => {
@@ -47,7 +45,7 @@ export const ReserveTable = ({ search }) => {
                 <tbody>
                     {filteredReservations.map((reservation, index) => {
                         if (hiddenReservations[reservation.ComputerId]) {
-                            return null;  // No renderizar esta reserva si está oculta.
+                            return null;
                         }
 
                         return (

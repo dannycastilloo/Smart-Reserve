@@ -1,12 +1,10 @@
+import { useState } from 'react'
 import { useComputer, deleteComputer } from '../../hooks/useComputer'
 
 export const PcTable = ({ search }) => {
 
     const { computers, loading } = useComputer()
-
-    if (loading) {
-        return <div>Cargando...</div>
-    }
+    const [hiddenComputers, setHiddenComputers] = useState({})
 
     const filteredComputers = Object.values(computers).filter((computer) =>
         computer.Codigo.toLowerCase().includes(search.toLowerCase()) ||
@@ -14,6 +12,14 @@ export const PcTable = ({ search }) => {
         computer.Brand.toLowerCase().includes(search.toLowerCase()) ||
         computer.Model.toLowerCase().includes(search.toLowerCase())
     )
+
+    const hideComputer = (id) => {
+        setHiddenComputers({ ...hiddenComputers, [id]: true });
+    };
+
+    if (loading) {
+        return <div>Cargando...</div>
+    }
 
     return (
         <>
@@ -28,25 +34,30 @@ export const PcTable = ({ search }) => {
                     </tr>
                 </thead>
                 <tbody>
-                    {filteredComputers.map((computer) => (
-                        <tr key={computer.Id}>
-                            <td className="table-content" data-titulo='Código'>
-                                {computer.Codigo}
-                            </td>
-                            <td className="table-content" data-titulo='Software'>
-                                {computer.Software}
-                            </td>
-                            <td className="table-content" data-titulo='Marca'>
-                                {computer.Brand}
-                            </td>
-                            <td className="table-content" data-titulo='Modelo'>
-                                {computer.Model}
-                            </td>
-                            <td className="actions-container">
-                                <button className="cancelar" onClick={() => deleteComputer(computer.Id)}>Eliminar</button>
-                            </td>
-                        </tr>
-                    ))}
+                    {filteredComputers.map((computer) => {
+                        if (hiddenComputers[computer.Id]) {
+                            return null;
+                        }
+                        return (
+                            <tr key={computer.Id}>
+                                <td className="table-content" data-titulo='Código'>
+                                    {computer.Codigo}
+                                </td>
+                                <td className="table-content" data-titulo='Software'>
+                                    {computer.Software}
+                                </td>
+                                <td className="table-content" data-titulo='Marca'>
+                                    {computer.Brand}
+                                </td>
+                                <td className="table-content" data-titulo='Modelo'>
+                                    {computer.Model}
+                                </td>
+                                <td className="actions-container">
+                                    <button className="cancelar" onClick={() => hideComputer(computer.Id)}>Eliminar</button>
+                                </td>
+                            </tr>
+                        )
+                    })}
                 </tbody>
             </table>
         </>
